@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import top.zsloveyd.chefmenu.R;
@@ -17,6 +18,9 @@ public class BasePager {
 
     public TextView tvTitle;
     public ImageButton backBtn;
+
+    public View navigationBar;
+
     public FrameLayout flContent;// 空的帧布局对象, 要动态添加布局
 
     public View mRootView;// 当前页面的布局对象
@@ -29,6 +33,7 @@ public class BasePager {
 
     private View initView() {
         View view = View.inflate(mActivity, R.layout.base_pager, null);
+        navigationBar = view.findViewById(R.id.navigation_bar);
         tvTitle = (TextView) view.findViewById(R.id.tv_title);
         backBtn = (ImageButton) view.findViewById(R.id.back_img);
         flContent = (FrameLayout) view.findViewById(R.id.fl_content);
