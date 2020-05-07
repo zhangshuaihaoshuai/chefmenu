@@ -13,8 +13,6 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //隐藏导航栏
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
     }
 }
