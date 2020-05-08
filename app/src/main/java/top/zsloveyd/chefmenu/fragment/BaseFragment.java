@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +24,16 @@ public abstract class BaseFragment extends Fragment {
     public Activity mActivity;//这个activity就是MainActivity
 
 
+    public TextView tvTitle;
+    public ImageButton backBtn;
+
+    public View navigationBar;
+
+    public FrameLayout flContent;// 空的帧布局对象, 要动态添加布局
+
+    public View mRootView;// 当前页面的布局对象
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +46,13 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         System.out.println("onCreateView");
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.base_pager,container,false);
+        mRootView = view;
+        navigationBar = view.findViewById(R.id.navigation_bar);
+        tvTitle = (TextView) view.findViewById(R.id.tv_title);
+        backBtn = (ImageButton) view.findViewById(R.id.back_img);
+        flContent = (FrameLayout) view.findViewById(R.id.fl_content);
+        return view;
     }
 
     @Override
@@ -41,12 +60,6 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         System.out.println("onActivityCreatedinitData");
     }
-
-    // 初始化布局, 必须由子类实现
-//    public abstract View initView(@Nullable ViewGroup container);
-
-    // 初始化数据, 必须由子类实现
-//    public abstract void initData();
 
 
 }
