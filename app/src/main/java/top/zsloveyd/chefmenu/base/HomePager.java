@@ -4,7 +4,15 @@ import android.app.Activity;
 import android.view.View;
 
 import com.google.gson.Gson;
+import com.youth.banner.Banner;
+import com.youth.banner.config.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
 
+import java.util.ArrayList;
+
+import javax.xml.transform.Transformer;
+
+import top.zsloveyd.chefmenu.R;
 import top.zsloveyd.chefmenu.model.GetAppHomeData;
 import top.zsloveyd.chefmenu.utils.GloablUrlPath;
 import top.zsloveyd.chefmenu.utils.HttpUtils;
@@ -13,7 +21,8 @@ import top.zsloveyd.chefmenu.utils.HttpUtils;
 /**
  * Created by zhangxiaoshuai on 2020/5/7
  */
-public class HomePager extends BasePager {
+public class HomePager extends BasePager{
+
 
     public HomePager(Activity activity) {
         super(activity);
@@ -21,6 +30,7 @@ public class HomePager extends BasePager {
 
     @Override
     public void initData(){
+
         navigationBar.setVisibility(View.GONE);
         tvTitle.setText("首页");
 
@@ -40,10 +50,6 @@ public class HomePager extends BasePager {
 
             }
         });
-
-
-
-
     }
 
 }
