@@ -21,12 +21,10 @@ import java.util.List;
 import top.zsloveyd.chefmenu.R;
 import top.zsloveyd.chefmenu.adapter.ImageNetAdapter;
 import top.zsloveyd.chefmenu.handler.OKhandler;
-import top.zsloveyd.chefmenu.model.DataBean;
 import top.zsloveyd.chefmenu.model.homedata.GetAppHomeData;
 import top.zsloveyd.chefmenu.model.homedata.HomeData;
 import top.zsloveyd.chefmenu.model.homedata.HomeDataCarousel;
 import top.zsloveyd.chefmenu.utils.GloablUrlPath;
-import top.zsloveyd.chefmenu.utils.HttpUtils;
 import top.zsloveyd.chefmenu.utils.OkHttpUtil;
 
 /**
@@ -58,8 +56,8 @@ public class HomeFragment extends BaseFragment {
 
         banner = TextParentView.findViewById(R.id.banner);
         //设置适配器
-        adapter = new ImageNetAdapter(null);
-        banner.setAdapter(adapter);
+        banner.setAdapter(new ImageNetAdapter(null));
+
         //设置指示器
         banner.setIndicator(new CircleIndicator(mActivity));
         //设置点击事件
@@ -109,25 +107,8 @@ public class HomeFragment extends BaseFragment {
     public void createUI(HomeData homeData){
         List<HomeDataCarousel> carousel = homeData.getCarousel();
 
-        adapter = new ImageNetAdapter(carousel);
-        banner.setAdapter(adapter);
+        banner.setAdapter(new ImageNetAdapter(carousel));
         adapter.notifyDataSetChanged();
-
-
-//        Banner banner = TextParentView.findViewById(R.id.banner);
-//        //设置适配器
-//        ImageNetAdapter adapter = new ImageNetAdapter(carousel);
-//        banner.setAdapter(adapter);
-//        //设置指示器
-//        banner.setIndicator(new CircleIndicator(mActivity));
-//        //设置点击事件
-//        banner.setOnBannerListener((data, position) -> {
-////            Snackbar.make(banner, ((DataBean) data).title, Snackbar.LENGTH_SHORT).show();
-//        });
-//        //圆角
-//        banner.setBannerRound(BannerUtils.dp2px(5));
-
-
 
     }
 
