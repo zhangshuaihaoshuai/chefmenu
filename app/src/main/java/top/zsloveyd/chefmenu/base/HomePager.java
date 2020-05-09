@@ -4,16 +4,8 @@ import android.app.Activity;
 import android.view.View;
 
 import com.google.gson.Gson;
-import com.youth.banner.Banner;
-import com.youth.banner.config.BannerConfig;
-import com.youth.banner.listener.OnBannerListener;
 
-import java.util.ArrayList;
-
-import javax.xml.transform.Transformer;
-
-import top.zsloveyd.chefmenu.R;
-import top.zsloveyd.chefmenu.model.GetAppHomeData;
+import top.zsloveyd.chefmenu.model.homedata.GetAppHomeData;
 import top.zsloveyd.chefmenu.utils.GloablUrlPath;
 import top.zsloveyd.chefmenu.utils.HttpUtils;
 

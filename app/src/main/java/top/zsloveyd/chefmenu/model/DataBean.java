@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import top.zsloveyd.chefmenu.R;
-
 public class DataBean {
     public Integer imageRes;
     public String imageUrl;
@@ -24,7 +22,6 @@ public class DataBean {
         this.title = title;
         this.viewType = viewType;
     }
-
 
     public static List<DataBean> getTestData3() {
         List<DataBean> list = new ArrayList<>();
